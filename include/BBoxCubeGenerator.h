@@ -5,18 +5,13 @@ std::tuple<Eigen::MatrixX3f, Eigen::MatrixX3i> BBoxToCube(const Eigen::Vector3f&
 {
     Eigen::MatrixX3i faces;
     faces.resize(12,3);
-    faces << 1,7,5,
-    1,3,7,
-    1,4,3,
-    1,2,4,
-    3,8,7,
-    3,4,8,
-    5,7,8,
-    5,8,6,
-    1,5,6,
-    1,6,2,
-    2,6,8,
-    2,8,4;
+    faces << 
+    3,1,5, 5,7,3,
+    1,0,4, 4,5,1,
+    0,2,6, 6,4,0,
+    7,6,2, 2,3,7,
+    3,2,0, 0,1,3,
+    5,4,6, 6,7,5;
 
     Eigen::MatrixX3f verts;
     verts.resize(8, 3);

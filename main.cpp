@@ -23,7 +23,8 @@ int main(int, char**){
 
     for (size_t row_idx = 0; row_idx < faces.rows(); row_idx++)
     {
-        output += std::format("f {}// {}// {}// \n", faces(row_idx, 0), faces(row_idx, 1),faces(row_idx, 2));
+        // obj index start from 1, not 0!
+        output += std::format("f {}  {}  {}  \n", faces(row_idx, 0)+1, faces(row_idx, 1)+1,faces(row_idx, 2)+1);
     }
     f_stream << output;
 
